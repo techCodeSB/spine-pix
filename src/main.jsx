@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import './index.css'
 import App from './App.jsx'
 import LoginPanel from './Login.jsx'
+import RegisterPanel from './Register.jsx'
 import { isAuthenticated } from './auth.js'
 
 function RequireAuth({ children }) {
@@ -26,10 +27,11 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<RequireNoAuth><LoginPanel /></RequireNoAuth>} />
+        <Route path="/register" element={<RequireNoAuth><RegisterPanel /></RequireNoAuth>} />
         <Route path="/app" element={<RequireAuth><App /></RequireAuth>} />
         <Route path="/" element={isAuthenticated() ? <Navigate replace to="/app" /> : <Navigate replace to="/login" />} />
         <Route path="*" element={isAuthenticated() ? <Navigate replace to="/app" /> : <Navigate replace to="/login" />} />
       </Routes>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
