@@ -360,7 +360,7 @@ export default function PassportPhotoMaker() {
 					</div>
 				</div>
 				<footer>
-					<p>Design and Develop by ❤ SPINE </p>
+					<p>Design and Develop by ❤ BISHAI </p>
 				</footer>
 			</div>
 		</div>
